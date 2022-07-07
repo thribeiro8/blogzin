@@ -14,13 +14,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O projeto possibilita criação de posts com titulo, autor e descrição, desde que esteja logado.
 
-## Ícones
+## 🔎 Ícones
 
 - 📦 Nova funcionalidade;
 - 🆙 Atualização;
 - 🐞 Correção de bug;
 - 🏁 Release.
 
-## Quer adicionar alguma feature?
+## 🔨 Quer mandar alguma feature?
 
 Me chama ou envia pull request.
