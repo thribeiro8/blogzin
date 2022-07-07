@@ -3,10 +3,11 @@ package com.spring.blogzin.controller;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +22,11 @@ public class BlogzinController {
 
 	@Autowired
 	BlogzinService blogzinService;
+
+	@RequestMapping("/")
+	public String index() {
+		return "index";
+	}
 
 	@RequestMapping(value = "/posts", method = RequestMethod.GET)
 	public ModelAndView getPosts() {
@@ -44,7 +50,7 @@ public class BlogzinController {
 	}
 
 	@RequestMapping(value = "/newpost", method = RequestMethod.POST)
-	public String savePost(@Validated Post post, BindingResult result, RedirectAttributes attributes) {
+	public String savePost(@Valid Post post, BindingResult result, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
 			attributes.addFlashAttribute("mensagem", "Verifique se os campos obrigatórios foram preenchidos!");
 			return "redirect:/newpost";
